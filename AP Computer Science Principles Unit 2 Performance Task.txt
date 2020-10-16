@@ -1,0 +1,508 @@
+#Co-Created by Mia Santos
+
+def reset_row():
+    while not_facing_north():
+        turn_left()
+    move()
+    turn_left()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def row_a():
+    for i in range (10):
+        move()
+    for i in range (3):
+        paint(color['black'])
+        move()
+    reset_row()
+
+def row_b():
+    for i in range (9):
+        move()
+    paint(color['black'])
+    for i in range (4):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_c():
+    for i in range (8):
+        move()
+    for i in range (3): 
+        paint(color['black'])
+        move()
+    move()
+    for i in range (2):
+        paint(color['black'])
+        move()
+    reset_row()
+
+def row_d():
+    for i in range (5):
+        move()
+    for i in range (3): 
+        paint(color['black'])
+        move()
+    for i in range (5):
+        move()
+    for i in range (2):
+        paint(color['black'])
+        move()
+    reset_row()
+    
+def row_e():
+    for i in range (4):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    paint(color['black'])
+    for i in range (8):
+        move()
+    for i in range (2): 
+        paint(color['black'])
+        move()
+    reset_row()
+    
+def row_f():
+    for i in range (5):
+        move()
+    paint(color['black'])
+    for i in range (9):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    paint(color['black'])
+    reset_row()
+
+def row_g():
+    for i in range (5):
+        move()
+    paint(color['black'])
+    for i in range (9):
+        move()
+    paint(color['black'])
+    for i in range (3):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_h():
+    for i in range (4):
+        move()
+    for i in range (3):
+        paint(color['black'])
+        move()
+    for i in range (6):
+        move()
+    for i in range (2):
+        paint(color['black'])
+        move()
+    for i in range (2):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_i():
+    for i in range (2):
+        move()
+    for i in range (2):
+        paint(color['black'])
+        move()
+    for i in range (9):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    paint(color['black'])
+    for i in range (3):
+        move()
+    paint(color['black'])
+    reset_row()
+    
+def row_j():
+    move()
+    paint(color['black'])
+    for i in range (11):
+        move()
+    paint(color['black'])
+    for i in range (4):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    paint(color['black'])
+    reset_row()
+
+def row_k():
+    paint(color['black'])
+    for i in range (11):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    for i in range (2):
+        paint(color['black'])
+        move()
+    reset_row()
+    
+def row_l():
+    paint(color['black'])
+    for i in range (11):
+        move()
+    paint(color['black'])
+    for i in range (4):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_m():
+    paint(color['black'])
+    for i in range (10):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_n():
+    move()
+    paint(color['black'])
+    for i in range (9):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    reset_row()
+    
+def row_o():
+    move()
+    move()
+    paint(color['black'])
+    for i in range (7):
+        move()
+    paint(color['black'])
+    for i in range (7):
+        move()
+    paint(color['black'])
+    for i in range (3):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_p():
+    move()
+    move()
+    paint(color['black'])
+    for i in range (7):
+        move()
+    paint(color['black'])
+    for i in range (7):
+        move()
+    paint(color['black'])
+    for i in range (3):
+        move()
+    paint(color['black'])
+    reset_row()
+
+def row_q():
+    for i in range (3):
+        move()
+    paint(color['black'])
+    for i in range (5):
+        move()
+    paint(color['black'])
+    for i in range (8):
+        move()
+    paint(color['black'])
+    move()
+    move()
+    paint(color['black'])
+    reset_row()
+
+def row_r():
+    for i in range (4):
+        move()
+    for i in range (4):
+        paint(color['black'])
+        move()
+    for i in range(9):
+        move()
+    paint(color['black'])
+    
+def color_world():
+    while left_is_clear():
+        while front_is_clear():
+            paint(color['orange'])
+            move()
+        paint(color['orange'])
+        face_north()
+        move()
+        if right_is_blocked():
+            turn_left()
+        else:
+            turn_right()
+    while front_is_clear():
+        paint(color['orange'])
+        move()
+    paint(color['orange'])
+    go_home()
+
+def go_home():
+    while not_facing_south():
+        turn_left()
+    while front_is_clear():
+        move()
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def face_north():
+    while not_facing_north():
+        turn_left()
+    
+def white_out():
+    while front_is_clear():
+        if color_is(color['orange']):
+            white_column()
+        else: 
+            move()
+    white_column()
+
+def white_column():
+    if color_is(color['orange']):
+        turn_left()
+        while color_is(color['orange']):
+            move()
+        turn_around()
+        while front_is_clear():
+            move()
+            paint(color['white'])
+        turn_left()
+        if front_is_clear():
+            move()
+
+def build_eye():
+    for i in range (6):
+        move()
+    turn_left()
+    for i in range (10):
+        move()
+    for i in range (3):
+        paint(color['black'])
+        move()
+    turn_left()
+    move()
+    turn_left()
+    move()
+    paint(color['white'])
+    move()
+    for i in range(2):
+        paint(color['black'])
+        move()
+
+def move_to_top():
+    while front_is_clear():
+        move()
+    turn_left()
+    while front_is_clear():
+        move()
+    turn_left()
+
+def build_arm():
+    for i in range (9):
+        move()
+    turn_left()
+    for i in range (6):
+        move()
+    paint_square_return()
+    turn_left()
+    paint_square_return()
+    turn_left()
+    paint_square_return()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    paint(color['black'])
+
+def paint_square_return():
+    move()
+    paint(color['black'])
+    turn_around()
+    move()
+    turn_around()
+
+def build_flame():
+    for i in range (17):
+        move()
+    turn_left()
+    for i in range (10):
+        move()
+    paint(color['yellow'])
+    move()
+    turn_left()
+    move()
+    turn_around()
+    paint(color['red'])
+    move()
+    paint(color['yellow'])
+    move()
+    paint(color['yellow'])
+    move()
+    paint(color['red'])
+    turn_left()
+    move()
+    turn_left()
+    paint(color['red'])
+    move()
+    paint(color['yellow'])
+    move()
+    paint(color['orange'])
+    move()
+    paint(color['red'])
+    turn_right()
+    move()
+    turn_right()
+    paint(color['red'])
+    move()
+    paint(color['red'])
+    move()
+    paint(color['orange'])
+    move()
+    paint(color['red'])
+    turn_left()
+    move()
+    turn_left()
+    move()
+    paint(color['red'])
+    move()
+    paint(color['red'])
+    turn_right()
+    move()
+    turn_right()
+    paint(color['red'])
+    move()
+    paint(color['red'])
+    turn_left()
+    move()
+    turn_left()
+    move()
+    paint(color['red'])
+
+def move_to_belly():
+    for i in range (7):
+        move()
+    turn_left()
+    for i in range (13):
+        move()
+    turn_right()
+    
+def build_belly():
+    for i in range (4):
+        while color_is(color['orange']):
+            move()
+        turn_around()
+        move()
+        for i in range (2):
+            paint(color['yellow'])
+            move()
+        turn_left()
+        move()
+        turn_left()
+    move()
+    turn_left()
+    move()
+    turn_left()
+    for i in range (2):
+        turn_right()
+        move()
+        turn_left()
+        move()
+        paint(color['yellow'])
+
+def create_outline():
+    row_a()
+    row_b()
+    row_c()
+    row_d()
+    row_e()
+    row_f()
+    row_g()
+    row_h()
+    row_i()
+    row_j()
+    row_k()
+    row_l()
+    row_m()
+    row_n()
+    row_o()
+    row_p()
+    row_q()
+    row_r()
+
+def touch_up():
+    turn_around()
+    for i in range (4):
+        move()
+    paint(color['gray'])
+    move()
+    turn_right()
+    move()
+    for i in range (2):
+        paint(color['white'])
+        move()
+    move()
+    move()
+    turn_right()
+    for i in range (11):
+        move()
+    turn_left()
+    for i in range (2):
+        paint(color['white'])
+        move()
+    turn_left()
+    for i in range (3):
+        move()
+    turn_left()
+    for i in range (10):
+        move()
+    paint(color['white'])
+    turn_right()
+    move()
+    move()
+    paint(color['white'])
+
+color_world()
+create_outline()
+go_home()
+white_out()
+move_to_top()
+white_out()
+go_home()
+build_eye()
+go_home()
+build_flame()
+move_to_belly()
+build_belly()
+touch_up()
+go_home()
+build_arm()
+go_home()
